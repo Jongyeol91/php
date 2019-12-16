@@ -1,0 +1,25 @@
+<form action="/index.php/todosdb/add" method="POST">
+	<h1>게시판</h1>
+	<ul>
+		<?php foreach ($todos as $key => $value): ?>
+			<div>
+				<li>
+					<?php echo($key); ?> -
+					<?php echo($value["todo"]); ?> -
+<!--					<a href="/index.php/todosdb/--><?//= $value["id"] ?><!--">삭제</a>-->
+					<?php echo kdate($value["date"]); ?>
+					<a href="/index.php/todosdb/delete/<?= $value["id"] ?>">삭제</a>
+				</li>
+			</div>
+
+		<?php endforeach; ?>
+	</ul>
+	<article>
+		<div>
+			<a href="/index.php/todosdb/add" class="btn btn-info">글쓰기</a>
+		</div>
+	</article>
+<!--	<label for="todo">할일: </label>-->
+<!--	<input type="input" name="todo" required/>-->
+<!--	<input type="submit" name="submit" value="제출"/>-->
+</form>
